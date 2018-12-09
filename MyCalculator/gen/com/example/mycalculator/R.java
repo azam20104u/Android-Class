@@ -1102,11 +1102,11 @@ containing a value of this type.
         public static final int button13=0x7f050056;
         public static final int button14=0x7f050057;
         public static final int button15=0x7f050058;
-        public static final int button16=0x7f050044;
         public static final int button17=0x7f050043;
         public static final int button18=0x7f050042;
         public static final int button19=0x7f050041;
         public static final int button2=0x7f05004c;
+        public static final int button20=0x7f050044;
         public static final int button3=0x7f05004d;
         public static final int button4=0x7f05004e;
         public static final int button5=0x7f050050;

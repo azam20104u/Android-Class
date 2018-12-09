@@ -257,11 +257,11 @@ int id button12 0x7f050055
 int id button13 0x7f050056
 int id button14 0x7f050057
 int id button15 0x7f050058
-int id button16 0x7f050044
 int id button17 0x7f050043
 int id button18 0x7f050042
 int id button19 0x7f050041
 int id button2 0x7f05004c
+int id button20 0x7f050044
 int id button3 0x7f05004d
 int id button4 0x7f05004e
 int id button5 0x7f050050
