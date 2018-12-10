@@ -953,12 +953,6 @@ containing a value of this type.
          (such as screen margins) for screens with more than 820dp of available width. This
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
     
- Default screen margins, per the Android Design guidelines. 
-
-         Example customization of dimensions originally defined in res/values/dimens.xml
-         (such as screen margins) for screens with more than 820dp of available width. This
-         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
-    
          */
         public static final int activity_horizontal_margin=0x7f080015;
         public static final int activity_vertical_margin=0x7f080016;
@@ -1097,30 +1091,30 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f050016;
         public static final int action_menu_presenter=0x7f050017;
         public static final int action_mode_close_button=0x7f050024;
-        public static final int action_settings=0x7f050059;
+        public static final int action_settings=0x7f05005c;
         public static final int activity_chooser_view_content=0x7f050025;
         public static final int always=0x7f05000b;
         public static final int beginning=0x7f050011;
-        public static final int button1=0x7f05004b;
-        public static final int button10=0x7f050052;
-        public static final int button11=0x7f050053;
-        public static final int button12=0x7f050055;
-        public static final int button13=0x7f050056;
-        public static final int button14=0x7f050057;
-        public static final int button15=0x7f050058;
-        public static final int button17=0x7f050043;
-        public static final int button18=0x7f050042;
-        public static final int button19=0x7f050041;
-        public static final int button2=0x7f05004c;
-        public static final int button20=0x7f050044;
-        public static final int button3=0x7f05004d;
+        public static final int button0=0x7f050059;
+        public static final int button1=0x7f050053;
+        public static final int button2=0x7f050054;
+        public static final int button3=0x7f050055;
         public static final int button4=0x7f05004e;
-        public static final int button5=0x7f050050;
-        public static final int button6=0x7f050051;
-        public static final int button7=0x7f050046;
-        public static final int button8=0x7f050047;
-        public static final int button9=0x7f050048;
-        public static final int buttonDelete=0x7f050049;
+        public static final int button5=0x7f05004f;
+        public static final int button6=0x7f050050;
+        public static final int button7=0x7f050049;
+        public static final int button8=0x7f05004a;
+        public static final int button9=0x7f05004b;
+        public static final int buttonAC=0x7f050044;
+        public static final int buttonDelete=0x7f050047;
+        public static final int buttonDevid=0x7f05004c;
+        public static final int buttonDot=0x7f050058;
+        public static final int buttonEqual=0x7f05005a;
+        public static final int buttonMultiply=0x7f050051;
+        public static final int buttonPM=0x7f050045;
+        public static final int buttonPlus=0x7f05005b;
+        public static final int buttonReminder=0x7f050046;
+        public static final int buttonSubstruct=0x7f050056;
         public static final int checkbox=0x7f05002d;
         public static final int collapseActionView=0x7f05000d;
         public static final int default_activity_button=0x7f050028;
@@ -1162,15 +1156,18 @@ containing a value of this type.
         public static final int split_action_bar=0x7f05001e;
         public static final int submit_area=0x7f050039;
         public static final int tabMode=0x7f050002;
-        public static final int tableRow=0x7f05003c;
-        public static final int tableRow0=0x7f05003e;
-        public static final int tableRow1=0x7f050040;
-        public static final int tableRow2=0x7f050045;
-        public static final int tableRow3=0x7f05004a;
-        public static final int tableRow4=0x7f05004f;
-        public static final int tableRow5=0x7f050054;
-        public static final int textView1=0x7f05003d;
-        public static final int textView2=0x7f05003f;
+        public static final int tableRow0=0x7f050041;
+        public static final int tableRow00=0x7f05003e;
+        public static final int tableRow01=0x7f05003f;
+        public static final int tableRow02=0x7f050040;
+        public static final int tableRow1=0x7f050043;
+        public static final int tableRow2=0x7f050048;
+        public static final int tableRow3=0x7f05004d;
+        public static final int tableRow4=0x7f050052;
+        public static final int tableRow5=0x7f050057;
+        public static final int textView=0x7f05003c;
+        public static final int textViewResult=0x7f05003d;
+        public static final int textViewResult1=0x7f050042;
         public static final int title=0x7f05002b;
         public static final int top_action_bar=0x7f050020;
         public static final int up=0x7f050021;
@@ -1299,31 +1296,9 @@ containing a value of this type.
         res/values-v11/styles.xml on API 14+ devices.
     
  API 14 theme customizations can go here. 
-
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    
-
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        
-
-        Base application theme for API 11+. This theme completely replaces
-        AppBaseTheme from res/values/styles.xml on API 11+ devices.
-    
- API 11 theme customizations can go here. 
-
-        Base application theme for API 14+. This theme completely replaces
-        AppBaseTheme from BOTH res/values/styles.xml and
-        res/values-v11/styles.xml on API 14+ devices.
-    
- API 14 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f0b008b;
         /**  Application theme. 
- All customizations that are NOT specific to a particular API-level can go here. 
- Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f0b008c;
@@ -2677,7 +2652,7 @@ containing a value of this type.
          */
         public static final int[] MenuView = {
             0x010100ae, 0x0101012c, 0x0101012d, 0x0101012e,
-            0x0101012f, 0x01010130, 0x01010131, 0x01010438
+            0x0101012f, 0x01010130, 0x01010131, 0x01010435
         };
         /**
           <p>

@@ -9,24 +9,49 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.mycalculator.MainActivity" >
 
-    <TableLayout
-        android:layout_width="match_parent"
+    <LinearLayout 
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true" >
-
-         <TableRow
-            android:id="@+id/tableRow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="right" >
-
-            <TextView
-                android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="right">
+    <TextView
+                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
-                android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textSize="48dp" />
+     <TextView
+                android:id="@+id/textViewResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="="
+                android:textSize="48dp" />
+     </LinearLayout>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*" >
+        
+         <TableRow
+            android:id="@+id/tableRow00"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right" >
+            <TextView />
+        </TableRow>
+         <TableRow
+            android:id="@+id/tableRow01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right" >
+             <TextView />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right" >
+              <TextView />
         </TableRow>
         
           <TableRow
@@ -36,10 +61,10 @@
             android:gravity="right" >
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/textViewResult1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="="
+                android:text="    "
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textSize="48dp" />
 
@@ -52,25 +77,25 @@
               android:layout_gravity="right" >
 
               <Button
-                  android:id="@+id/button19"
+                  android:id="@+id/buttonAC"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="AC" />
 
               <Button
-                  android:id="@+id/button18"
+                  android:id="@+id/buttonPM"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="+/-" />
 
               <Button
-                  android:id="@+id/button17"
+                  android:id="@+id/buttonReminder"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:text="%" />
 
               <Button
-                  android:id="@+id/button20"
+                  android:id="@+id/buttonDelete"
                   android:layout_width="fill_parent"
                   android:layout_height="wrap_content"
                   android:text="   Delete   " />
@@ -87,7 +112,8 @@
                 android:id="@+id/button7"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="7" />
+                android:text="7" 
+                android:onClick="click7"/>
 
             <Button
                 android:id="@+id/button8"
@@ -102,7 +128,7 @@
                 android:text="9" />
 
             <Button
-                android:id="@+id/buttonDelete"
+                android:id="@+id/buttonDevid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="/" />
@@ -115,25 +141,25 @@
             android:layout_gravity="right" >
 
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/button4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="4" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/button5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="5" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/button6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="6" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/buttonMultiply"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="*" />
@@ -146,25 +172,25 @@
             android:layout_gravity="right" >
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/button1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="1" />
 
             <Button
-                android:id="@+id/button6"
+                android:id="@+id/button2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2" />
 
             <Button
-                android:id="@+id/button10"
+                android:id="@+id/button3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3" />
 
             <Button
-                android:id="@+id/button11"
+                android:id="@+id/buttonSubstruct"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="-" />
@@ -177,25 +203,25 @@
             android:layout_gravity="right" >
 
             <Button
-                android:id="@+id/button12"
+                android:id="@+id/buttonDot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="." />
 
             <Button
-                android:id="@+id/button13"
+                android:id="@+id/button0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0" />
 
             <Button
-                android:id="@+id/button14"
+                android:id="@+id/buttonEqual"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="=" />
 
             <Button
-                android:id="@+id/button15"
+                android:id="@+id/buttonPlus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="+" />
