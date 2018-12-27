@@ -51,8 +51,7 @@ public class MainActivity extends ActionBarActivity {
         minus=(Button) findViewById(R.id.buttonSubstruct);
     }
     
-    public void click7(View v){
-    	sb.append("7");
-    	tv.setText(sb);
+    public void click(View v){
+    	
     }
 }
