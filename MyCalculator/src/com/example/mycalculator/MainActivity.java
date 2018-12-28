@@ -2,8 +2,6 @@ package com.example.mycalculator;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -16,8 +14,8 @@ public class MainActivity extends ActionBarActivity {
 	zero,dot,equal,
 	multiply,divition,plus,minus;
 	
-	StringBuffer sb=new StringBuffer();
-	
+	double val1,val2;
+	char operator='0';
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +50,93 @@ public class MainActivity extends ActionBarActivity {
     }
     
     public void click(View v){
+    	//click listen 0 to 9 button
+    	if (v.getId()==R.id.button0) {
+			tv.setText(tv.getText().toString()+"0");
+		}
+    	if (v.getId()==R.id.button1) {
+			tv.setText(tv.getText().toString()+"1");
+		}
+    	if (v.getId()==R.id.button2) {
+			tv.setText(tv.getText().toString()+"2");
+		}
+    	if (v.getId()==R.id.button3) {
+			tv.setText(tv.getText().toString()+"3");
+		}
+    	if (v.getId()==R.id.button4) {
+			tv.setText(tv.getText().toString()+"4");
+		}
+    	if (v.getId()==R.id.button5) {
+			tv.setText(tv.getText().toString()+"5");
+		}
+    	if (v.getId()==R.id.button6) {
+			tv.setText(tv.getText().toString()+"6");
+		}
+    	if (v.getId()==R.id.button7) {
+			tv.setText(tv.getText().toString()+"7");
+		}
+    	if (v.getId()==R.id.button8) {
+			tv.setText(tv.getText().toString()+"8");
+		}
+    	if (v.getId()==R.id.button9) {
+			tv.setText(tv.getText().toString()+"9");
+		}
     	
+    	if (v.getId()==R.id.buttonAC) {
+			tv.setText(null);
+			tvr.setText(null);
+		}
+    	
+    	//click listen operator button
+    	if (v.getId()==R.id.buttonMultiply) {
+    		operator='*';
+    		val1=Double.parseDouble(tv.getText().toString());
+    		tv.setText(null);
+			
+		}
+    	if (v.getId()==R.id.buttonDevid) {
+    		operator='/';
+    		val1=Double.parseDouble(tv.getText().toString());
+    		tv.setText(null);
+    		
+		}
+    	if (v.getId()==R.id.buttonPlus) {
+    		operator='+';
+    		val1=Double.parseDouble(tv.getText().toString());
+    		tv.setText(null);
+		}
+    	if (v.getId()==R.id.buttonSubstruct) {
+    		operator='-';
+    		val1=Double.parseDouble(tv.getText().toString());
+    		tv.setText(null);
+		}
+    	
+    	
+    	if (v.getId()==R.id.buttonEqual) {
+				val2=Double.parseDouble(tv.getText().toString());
+				double res;
+				switch (operator) {
+				case '*':
+					res=val1*val2;
+					tv.setText(String.valueOf(res));
+					tvr.setText(String.valueOf(res));
+					break;
+				case '/':
+					res=val1/val2;
+					tv.setText(String.valueOf(res));
+					tvr.setText(String.valueOf(res));
+					break;
+				case '+':
+					res=val1+val2;
+					tv.setText(String.valueOf(res));
+					tvr.setText(String.valueOf(res));
+					break;
+				case '-':
+					res=val1-val2;
+					tv.setText(String.valueOf(res));
+					tvr.setText(String.valueOf(res));
+					break;
+				}
+		}
     }
 }
