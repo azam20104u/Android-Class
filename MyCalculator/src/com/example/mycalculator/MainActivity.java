@@ -10,9 +10,9 @@ public class MainActivity extends ActionBarActivity {
 
 	TextView tv,tvr;
 	Button ac,pm,rm,delete,
-	one,two,three,four,five,six,seven,eight,nine,
-	zero,dot,equal,
-	multiply,divition,plus,minus;
+	zero,one,two,three,four,five,six,seven,eight,nine,
+	dot,
+	equal,multiply,divition,plus,minus;
 	
 	double val1,val2;
 	char operator='0';
@@ -29,6 +29,7 @@ public class MainActivity extends ActionBarActivity {
         rm=(Button) findViewById(R.id.buttonReminder);
         delete=(Button) findViewById(R.id.buttonDelete);
         
+        zero=(Button) findViewById(R.id.button0);
         one=(Button) findViewById(R.id.button1);
         two=(Button) findViewById(R.id.button2);
         three=(Button) findViewById(R.id.button3);
@@ -39,10 +40,9 @@ public class MainActivity extends ActionBarActivity {
         eight=(Button) findViewById(R.id.button8);
         nine=(Button) findViewById(R.id.button9);
         
-        zero=(Button) findViewById(R.id.button0);
         dot=(Button) findViewById(R.id.buttonDot);
-        equal=(Button) findViewById(R.id.buttonEqual);
         
+        equal=(Button) findViewById(R.id.buttonEqual);
         multiply=(Button) findViewById(R.id.buttonMultiply);
         divition=(Button) findViewById(R.id.buttonDevid);
         plus=(Button) findViewById(R.id.buttonPlus);
@@ -50,93 +50,98 @@ public class MainActivity extends ActionBarActivity {
     }
     
     public void click(View v){
-    	//click listen 0 to 9 button
+    	/*****************click listen Number button*****************/
     	if (v.getId()==R.id.button0) {
-			tv.setText(tv.getText().toString()+"0");
+			tvr.setText(tvr.getText().toString()+"0");
 		}
     	if (v.getId()==R.id.button1) {
-			tv.setText(tv.getText().toString()+"1");
+			tvr.setText(tvr.getText().toString()+"1");
 		}
     	if (v.getId()==R.id.button2) {
-			tv.setText(tv.getText().toString()+"2");
+			tvr.setText(tvr.getText().toString()+"2");
 		}
     	if (v.getId()==R.id.button3) {
-			tv.setText(tv.getText().toString()+"3");
+			tvr.setText(tvr.getText().toString()+"3");
 		}
     	if (v.getId()==R.id.button4) {
-			tv.setText(tv.getText().toString()+"4");
+			tvr.setText(tvr.getText().toString()+"4");
 		}
     	if (v.getId()==R.id.button5) {
-			tv.setText(tv.getText().toString()+"5");
+			tvr.setText(tvr.getText().toString()+"5");
 		}
     	if (v.getId()==R.id.button6) {
-			tv.setText(tv.getText().toString()+"6");
+			tvr.setText(tvr.getText().toString()+"6");
 		}
     	if (v.getId()==R.id.button7) {
-			tv.setText(tv.getText().toString()+"7");
+			tvr.setText(tvr.getText().toString()+"7");
 		}
     	if (v.getId()==R.id.button8) {
-			tv.setText(tv.getText().toString()+"8");
+			tvr.setText(tvr.getText().toString()+"8");
 		}
     	if (v.getId()==R.id.button9) {
-			tv.setText(tv.getText().toString()+"9");
+			tvr.setText(tvr.getText().toString()+"9");
+		}
+    	if (v.getId()==R.id.buttonDot) {
+			tvr.setText(tvr.getText().toString()+".");
 		}
     	
+    	
+    	/*****************click listen operator ac or delete button*****************/
     	if (v.getId()==R.id.buttonAC) {
-			tv.setText(null);
 			tvr.setText(null);
+			tv.setText(null);
+		}
+    	if (v.getId()==R.id.buttonDelete) {
+    		if (tvr.getText().length()>0) {
+    			CharSequence cs=tvr.getText().toString();
+    			tvr.setText(cs.subSequence(0, cs.length()-1));
+			}
 		}
     	
-    	//click listen operator button
+    	/*****************click listen operator button*****************/
     	if (v.getId()==R.id.buttonMultiply) {
     		operator='*';
-    		val1=Double.parseDouble(tv.getText().toString());
-    		tv.setText(null);
+    		val1=Double.parseDouble(tvr.getText().toString());
+    		tvr.setText(null);
 			
 		}
     	if (v.getId()==R.id.buttonDevid) {
     		operator='/';
-    		val1=Double.parseDouble(tv.getText().toString());
-    		tv.setText(null);
+    		val1=Double.parseDouble(tvr.getText().toString());
+    		tvr.setText(null);
     		
 		}
     	if (v.getId()==R.id.buttonPlus) {
     		operator='+';
-    		val1=Double.parseDouble(tv.getText().toString());
-    		tv.setText(null);
+    		val1=Double.parseDouble(tvr.getText().toString());
+    		tvr.setText(null);
 		}
     	if (v.getId()==R.id.buttonSubstruct) {
     		operator='-';
-    		val1=Double.parseDouble(tv.getText().toString());
-    		tv.setText(null);
+    		val1=Double.parseDouble(tvr.getText().toString());
+    		tvr.setText(null);
 		}
     	
-    	
+    	/*****************click listen = button*****************/
     	if (v.getId()==R.id.buttonEqual) {
-				val2=Double.parseDouble(tv.getText().toString());
-				double res;
+				val2=Double.parseDouble(tvr.getText().toString());
+				double res=0;
 				switch (operator) {
 				case '*':
 					res=val1*val2;
-					tv.setText(String.valueOf(res));
-					tvr.setText(String.valueOf(res));
 					break;
 				case '/':
 					res=val1/val2;
-					tv.setText(String.valueOf(res));
-					tvr.setText(String.valueOf(res));
 					break;
 				case '+':
 					res=val1+val2;
-					tv.setText(String.valueOf(res));
-					tvr.setText(String.valueOf(res));
 					break;
 				case '-':
 					res=val1-val2;
-					tv.setText(String.valueOf(res));
-					tvr.setText(String.valueOf(res));
 					break;
 				}
+				tvr.setText(String.valueOf(res));
+				tv.setText(String.valueOf(val1+""+operator+""+val2+"="+res));
 		}
     }
 }
