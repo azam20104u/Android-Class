@@ -16,6 +16,7 @@ public class MainActivity extends ActionBarActivity {
 	
 	double val1,val2;
 	char operator='0';
+	StringBuffer sb=new StringBuffer("");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,36 +54,58 @@ public class MainActivity extends ActionBarActivity {
     	/*****************click listen Number button*****************/
     	if (v.getId()==R.id.button0) {
 			tvr.setText(tvr.getText().toString()+"0");
+			sb.append("0");
+			tv.setText(sb);
 		}
     	if (v.getId()==R.id.button1) {
 			tvr.setText(tvr.getText().toString()+"1");
+			sb.append("1");
+			tv.setText(sb);
 		}
     	if (v.getId()==R.id.button2) {
 			tvr.setText(tvr.getText().toString()+"2");
+			sb.append("2");
+			tv.setText(sb);
 		}
     	if (v.getId()==R.id.button3) {
 			tvr.setText(tvr.getText().toString()+"3");
+			sb.append("3");
+			tv.setText(sb);
 		}
     	if (v.getId()==R.id.button4) {
 			tvr.setText(tvr.getText().toString()+"4");
+			sb.append("4");
+			tv.setText(sb);
 		}
     	if (v.getId()==R.id.button5) {
 			tvr.setText(tvr.getText().toString()+"5");
+			sb.append("5");
+			tv.setText(sb);
 		}
     	if (v.getId()==R.id.button6) {
 			tvr.setText(tvr.getText().toString()+"6");
+			sb.append("6");
+			tv.setText(sb);
 		}
     	if (v.getId()==R.id.button7) {
 			tvr.setText(tvr.getText().toString()+"7");
+			sb.append("7");
+			tv.setText(sb);
 		}
     	if (v.getId()==R.id.button8) {
 			tvr.setText(tvr.getText().toString()+"8");
+			sb.append("8");
+			tv.setText(sb);
 		}
     	if (v.getId()==R.id.button9) {
 			tvr.setText(tvr.getText().toString()+"9");
+			sb.append("9");
+			tv.setText(sb);
 		}
     	if (v.getId()==R.id.buttonDot) {
 			tvr.setText(tvr.getText().toString()+".");
+			sb.append(".");
+			tv.setText(sb);
 		}
     	
     	
@@ -90,12 +113,14 @@ public class MainActivity extends ActionBarActivity {
     	if (v.getId()==R.id.buttonAC) {
 			tvr.setText(null);
 			tv.setText(null);
+			sb=new StringBuffer("");
 		}
     	if (v.getId()==R.id.buttonDelete) {
     		if (tvr.getText().length()>0) {
     			CharSequence cs=tvr.getText().toString();
     			tvr.setText(cs.subSequence(0, cs.length()-1));
 			}
+    		sb=new StringBuffer("");
 		}
     	
     	/*****************click listen operator button*****************/
@@ -103,23 +128,31 @@ public class MainActivity extends ActionBarActivity {
     		operator='*';
     		val1=Double.parseDouble(tvr.getText().toString());
     		tvr.setText(null);
+    		sb.append("*");
+			tv.setText(sb);
 			
 		}
     	if (v.getId()==R.id.buttonDevid) {
     		operator='/';
     		val1=Double.parseDouble(tvr.getText().toString());
     		tvr.setText(null);
+    		sb.append("/");
+			tv.setText(sb);
     		
 		}
     	if (v.getId()==R.id.buttonPlus) {
     		operator='+';
     		val1=Double.parseDouble(tvr.getText().toString());
     		tvr.setText(null);
+    		sb.append("+");
+			tv.setText(sb);
 		}
     	if (v.getId()==R.id.buttonSubstruct) {
     		operator='-';
     		val1=Double.parseDouble(tvr.getText().toString());
     		tvr.setText(null);
+    		sb.append("-");
+			tv.setText(sb);
 		}
     	
     	/*****************click listen = button*****************/
@@ -142,6 +175,8 @@ public class MainActivity extends ActionBarActivity {
 				}
 				tvr.setText(String.valueOf(res));
 				tv.setText(String.valueOf(val1+""+operator+""+val2+"="+res));
+				sb=new StringBuffer("");
+				sb.append(res);
 		}
     }
 }
