@@ -15,7 +15,7 @@ public class DBHack extends SQLiteOpenHelper{
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		db.execSQL("create table contact(name text,phone long)");
+		db.execSQL("create table contact(id integer primary key autoincrement,name text,phone long unique)");
 	}
 
 	@Override
@@ -35,5 +35,18 @@ public class DBHack extends SQLiteOpenHelper{
 		SQLiteDatabase db=getWritableDatabase();
 		Cursor cursor=db.rawQuery("select* from contact",null);
 		return cursor;
+	}
+
+	public void updateContact(Contacts contact) {
+		SQLiteDatabase db=getWritableDatabase();
+		ContentValues values=new ContentValues();
+		values.put("name", contact.getName());
+		values.put("phone", contact.getPhone());
+		db.update("contact", values, "id=?", new String[]{String.valueOf(contact.getId())});
+	}
+
+	public void deleteContact(String tid) {
+		SQLiteDatabase db=getWritableDatabase();
+		db.delete("contact", "id=?", new String[]{tid});
 	}
 }

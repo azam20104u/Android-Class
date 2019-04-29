@@ -57,16 +57,39 @@
             android:inputType="number" />
 
     </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/LinearLayout02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/LinearLayout01"
+        android:layout_below="@+id/LinearLayout01" 
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Id"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="number" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/LinearLayout01"
-        android:layout_below="@+id/LinearLayout01"
-        android:text="Save"
-        android:onClick="saveData" />
-
+        android:layout_alignLeft="@+id/LinearLayout02"
+        android:layout_below="@+id/LinearLayout02"
+        android:onClick="saveData"
+        android:text="Save" />
     <Button
         android:id="@+id/Button01"
         android:layout_width="wrap_content"
@@ -74,9 +97,9 @@
         android:layout_alignBaseline="@+id/button1"
         android:layout_alignBottom="@+id/button1"
         android:layout_toRightOf="@+id/button1"
-        android:onClick="viewData"
-        android:text="View" />
-
+        android:onClick="clearData"
+        android:text="Clear" />
+    
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
@@ -84,14 +107,26 @@
         android:layout_alignBaseline="@+id/Button01"
         android:layout_alignBottom="@+id/Button01"
         android:layout_toRightOf="@+id/Button01"
-        android:text="Update" />
+        android:text="Update" 
+        android:onClick="updateData"/>
 
     <Button
         android:id="@+id/Button02"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/LinearLayout01"
+        android:layout_below="@+id/LinearLayout02"
         android:layout_toRightOf="@+id/button2"
+        android:onClick="deleteData"
         android:text="Delete" />
+    
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_below="@+id/button1"
+        android:layout_marginTop="16dp" >
+    </ListView>
+    
 
 </RelativeLayout>
